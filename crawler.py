@@ -56,7 +56,7 @@ def content_crawler(news_title,news_link):
 def sql(news_title,news_link,news_time,news_content,news_img):
 
     try:
-        newsdb = Blog.objects.get(news_title=news_title)
+        newsdb = News.objects.get(news_title=news_title)
         newsdb.news_link = news_link
         newsdb.news_time = news_time
         newsdb.news_content= news_content

@@ -55,8 +55,20 @@ def content_crawler(news_title,news_link):
 
 def sql(news_title,news_link,news_time,news_content,news_img):
 
+    try:
+        newsdb = Blog.objects.get(news_title=news_title)
+        newsdb.news_link = news_link
+        newsdb.news_time = news_time
+        newsdb.news_content= news_content
+        newsdb.news_img = news_img
+
+
+        newsdb.save()
+        print('更新資料')
+    except:
         newsdb = News.objects.create(news_title=news_title,news_link=news_link, news_time=news_time, news_content=news_content, news_img=news_img)
         newsdb.save()
         print('成功存入一筆資料')
+
 
 news_crawler('https://nba.udn.com/nba/index?gr=www')

@@ -8,5 +8,5 @@ django-js-asset==1.1.0
 djangorestframework==3.9.1
 Markdown==3.0.1
 requests==2.21.0
-urllib3==1.24.1
+urllib3==1.26.5
 
